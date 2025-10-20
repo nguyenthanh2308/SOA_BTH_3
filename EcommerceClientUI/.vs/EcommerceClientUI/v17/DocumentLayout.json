@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\ecommerceclientui\\ecommerceclientui\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|solutionrelative:ecommerceclientui\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\ecommerceclientui\\ecommerceclientui\\wwwroot\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|solutionrelative:ecommerceclientui\\wwwroot\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\ecommerceclientui\\ecommerceclientui\\wwwroot\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|solutionrelative:ecommerceclientui\\wwwroot\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\ecommerceclientui\\ecommerceclientui\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|solutionrelative:ecommerceclientui\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\ecommerceclientui\\ecommerceclientui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA258FE-C0F8-4762-8C5A-DF27FC6E4004}|EcommerceClientUI\\EcommerceClientUI.csproj|solutionrelative:ecommerceclientui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "EcommerceClientUI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "EcommerceClientUI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-11T10:40:37.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\style.css",
+              "RelativeDocumentMoniker": "EcommerceClientUI\\wwwroot\\style.css",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\style.css",
+              "RelativeToolTip": "EcommerceClientUI\\wwwroot\\style.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-11T10:40:19.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "script.js",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\script.js",
+              "RelativeDocumentMoniker": "EcommerceClientUI\\wwwroot\\script.js",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\script.js",
+              "RelativeToolTip": "EcommerceClientUI\\wwwroot\\script.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-11T10:39:54.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "EcommerceClientUI\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\index.html",
+              "RelativeToolTip": "EcommerceClientUI\\wwwroot\\index.html",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-11T10:39:18.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\Program.cs",
+              "RelativeDocumentMoniker": "EcommerceClientUI\\Program.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\EcommerceClientUI\\EcommerceClientUI\\Program.cs",
+              "RelativeToolTip": "EcommerceClientUI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T10:38:12.34Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

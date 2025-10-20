@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E-Commerce Demo UI (HTML + JS)</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <main class="container">
+        <h1>E-Commerce Demo UI (HTML + JS)</h1>
+        <p class="muted">Đăng nhập qua <b>AuthService</b> để lấy <b>JWT</b>, rồi gọi <b>ProductService</b> để CRUD sản phẩm (SOA).</p>
+
+        <section class="grid-2">
+            <div class="card">
+                <h2>Cấu hình dịch vụ</h2>
+                <label>AuthService URL</label>
+                <input id="authBase" type="text" value="https://localhost:7268" />
+                <label>ProductService URL</label>
+                <input id="prodBase" type="text" value="https://localhost:7181" />
+            </div>
+
+            <div class="card">
+                <h2>Đăng nhập (lấy JWT)</h2>
+                <div class="grid-2 tight">
+                    <div>
+                        <label>Username</label>
+                        <input id="username" type="text" value="admin" />
+                    </div>
+                    <div>
+                        <label>Password (theo rule bài 2)</label>
+                        <input id="password" type="text" value="21232f297a57a5a743894a0e4a801fc3" />
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="btnLogin">Login</button>
+                    <button id="btnClearToken" class="secondary">Clear token</button>
+                </div>
+                <div id="authMsg" class="msg"></div>
+                <div id="tokenBox" class="tokenBox hidden"></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="row space">
+                <h2>Sản phẩm</h2>
+                <button id="btnReload" class="secondary">Tải lại</button>
+            </div>
+
+            <div class="grid-4 form-create">
+                <div>
+                    <label>Tên</label>
+                    <input id="createName" type="text" placeholder="Áo thun" />
+                </div>
+                <div>
+                    <label>Giá</label>
+                    <input id="createPrice" type="number" placeholder="159000" />
+                </div>
+                <div>
+                    <label>SL</label>
+                    <input id="createQty" type="number" placeholder="10" />
+                </div>
+                <div class="align-end">
+                    <button id="btnCreate">Thêm</button>
+                </div>
+            </div>
+
+            <div id="listMsg" class="msg"></div>
+            <div class="tableWrap">
+                <table id="tbl">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Giá</th>
+                            <th>SL</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+            <p class="muted small">* Thêm/Sửa/Xóa yêu cầu header <code>Authorization: Bearer &lt;token&gt;</code>. Thiếu hoặc token sai → 401.</p>
+        </section>
+
+        <section class="card">
+            <h2>Gợi ý xử lý lỗi thường gặp</h2>
+            <ul class="small">
+                <li><b>CORS</b>: bật <code>app.UseCors()</code> + <code>AllowAnyOrigin/AnyHeader/AnyMethod</code> ở cả AuthService và ProductService khi dev.</li>
+                <li><b>Self-signed HTTPS</b>: lần đầu mở <code>https://localhost:7268</code> và <code>https://localhost:7181</code> trong trình duyệt, bấm “Advanced/Continue”.</li>
+                <li><b>MySQL</b>: nếu gặp caching_sha2_password, thêm <code>AllowPublicKeyRetrieval=True</code> khi <code>SslMode=None</code>.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
