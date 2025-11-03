@@ -1,83 +1,85 @@
-﻿const el = (id) => document.getElementById(id);
+﻿// ===== Guard: tránh nạp script 2 lần =====
+if (window.__APP_LOADED__) {
+    console.warn("[UI] script.js was loaded twice");
+}
+window.__APP_LOADED__ = true;
+
+// ===== Shortcuts / State =====
+const $ = (id) => document.getElementById(id);
 let TOKEN = "";
 
-function setMsg(target, text, type = "info") {
-    const box = el(target);
+// ===== Helpers =====
+function say(target, text, type = "info") {
+    const box = $(target);
     if (!box) return;
     box.className = "msg " + type;
     box.textContent = text || "";
     if (!text) box.classList.remove("msg");
 }
-
-function showToken(token) {
-    const box = el("tokenBox");
-    if (!token) {
-        box.classList.add("hidden");
-        box.textContent = "";
-        return;
-    }
+function showToken(t) {
+    const box = $("tokenBox");
+    if (!box) return;
+    if (!t) { box.classList.add("hidden"); box.textContent = ""; return; }
     box.classList.remove("hidden");
-    box.textContent = "Token: " + token;
+    box.textContent = "Token: " + t;
 }
-
 async function httpJson(url, opts = {}) {
     const res = await fetch(url, opts);
     if (!res.ok) {
         const text = await res.text().catch(() => res.statusText);
-        throw new Error(`${res.status} ${res.statusText} - ${text}`);
+        throw new Error(res.status + " " + res.statusText + " - " + text);
     }
     const ct = res.headers.get("content-type") || "";
-    if (ct.includes("application/json")) return await res.json();
-    return await res.text();
+    return ct.includes("application/json") ? res.json() : res.text();
 }
+// dùng function (không bị lỗi nếu file vô tình load 2 lần)
+function trimSlash(s) { return String(s).replace(/\/$/, ""); }
 
-// === Auth ===
+// ===================== Auth =====================
 async function login() {
-    const base = el("authBase").value.replace(/\/$/, "");
-    const username = el("username").value.trim();
-    const password = el("password").value.trim();
-    setMsg("authMsg", "Đang đăng nhập…");
+    const base = trimSlash($("authBase").value);
+    say("authMsg", "Đang đăng nhập...");
     try {
         const data = await httpJson(`${base}/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ userName: username, password }),
+            body: JSON.stringify({
+                userName: $("username").value.trim(),
+                password: $("password").value.trim()
+            })
         });
         TOKEN = data.token || "";
         showToken(TOKEN);
-        setMsg("authMsg", "Đăng nhập thành công!", "ok");
+        say("authMsg", "Đăng nhập thành công!", "ok");
     } catch (e) {
-        setMsg("authMsg", e.message || "Login failed", "err");
+        say("authMsg", e.message || "Login failed", "err");
     }
 }
 
-// === Products ===
+// ===================== Products =====================
 async function loadProducts() {
-    const base = el("prodBase").value.replace(/\/$/, "");
-    setMsg("listMsg", "Đang tải…");
+    const base = trimSlash($("prodBase").value);
+    say("listMsg", "Đang tải...");
     try {
         const data = await httpJson(`${base}/products`);
-        renderTable(data || []);
-        setMsg("listMsg", "");
+        renderTable(Array.isArray(data) ? data : []);
+        say("listMsg", "");
     } catch (e) {
-        setMsg("listMsg", e.message || "Load failed", "err");
+        say("listMsg", e.message || "Load failed", "err");
         renderTable([]);
     }
 }
 
 function renderTable(items) {
-    const tbody = el("tbody");
-    tbody.innerHTML = "";
-    if (!Array.isArray(items) || items.length === 0) {
+    const body = $("tbody");
+    if (!body) return;
+    body.innerHTML = "";
+    if (!items.length) {
         const tr = document.createElement("tr");
         const td = document.createElement("td");
-        td.colSpan = 5;
-        td.textContent = "Chưa có sản phẩm";
-        tr.appendChild(td);
-        tbody.appendChild(tr);
-        return;
+        td.colSpan = 5; td.textContent = "Chưa có sản phẩm";
+        tr.appendChild(td); body.appendChild(tr); return;
     }
-
     for (const p of items) {
         const tr = document.createElement("tr");
 
@@ -108,7 +110,14 @@ function renderTable(items) {
         const tdAct = document.createElement("td");
         const btnSave = document.createElement("button");
         btnSave.textContent = "Lưu";
-        btnSave.onclick = () => updateProduct({ id: p.id, name: ipName.value, price: Number(ipPrice.value), quantity: Number(ipQty.value) });
+        btnSave.onclick = () =>
+            updateProduct({
+                id: p.id,
+                name: ipName.value,
+                price: Number(ipPrice.value),
+                quantity: Number(ipQty.value),
+                description: p.description ?? null
+            });
         const btnDel = document.createElement("button");
         btnDel.textContent = "Xóa";
         btnDel.className = "danger";
@@ -117,74 +126,216 @@ function renderTable(items) {
         tdAct.appendChild(btnDel);
         tr.appendChild(tdAct);
 
-        tbody.appendChild(tr);
+        body.appendChild(tr);
     }
 }
 
 async function createProduct() {
-    const base = el("prodBase").value.replace(/\/$/, "");
-    const name = el("createName").value.trim();
-    const price = Number(el("createPrice").value || 0);
-    const quantity = Number(el("createQty").value || 0);
-
+    const base = trimSlash($("prodBase").value);
+    const body = {
+        name: $("createName").value.trim(),
+        price: Number($("createPrice").value || 0),
+        quantity: Number($("createQty").value || 0)
+    };
     try {
         await httpJson(`${base}/products`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {}),
+                ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {})
             },
-            body: JSON.stringify({ name, price, quantity }),
+            body: JSON.stringify(body)
         });
-        setMsg("listMsg", "Đã thêm!", "ok");
+        say("listMsg", "Đã thêm!", "ok");
+        $("createName").value = "";
+        $("createPrice").value = "";
+        $("createQty").value = "";
         await loadProducts();
-        el("createName").value = "";
-        el("createPrice").value = "";
-        el("createQty").value = "";
     } catch (e) {
-        setMsg("listMsg", e.message || "Create failed (check token)", "err");
+        say("listMsg", e.message || "Create failed (check token)", "err");
     }
 }
 
 async function updateProduct(p) {
-    const base = el("prodBase").value.replace(/\/$/, "");
+    const base = trimSlash($("prodBase").value);
     try {
         await httpJson(`${base}/products/${p.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {}),
+                ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {})
             },
-            body: JSON.stringify(p),
+            body: JSON.stringify(p)
         });
-        setMsg("listMsg", "Đã lưu!", "ok");
+        say("listMsg", "Đã lưu!", "ok");
     } catch (e) {
-        setMsg("listMsg", e.message || "Update failed (check token)", "err");
+        say("listMsg", e.message || "Update failed (check token / route PUT /products/{id})", "err");
     }
 }
 
 async function deleteProduct(id) {
-    const base = el("prodBase").value.replace(/\/$/, "");
+    const base = trimSlash($("prodBase").value);
     if (!confirm("Xóa sản phẩm #" + id + "?")) return;
     try {
         await httpJson(`${base}/products/${id}`, {
             method: "DELETE",
-            headers: {
-                ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {}),
-            },
+            headers: { ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {}) }
         });
-        setMsg("listMsg", "Đã xóa!", "ok");
+        say("listMsg", "Đã xóa!", "ok");
         await loadProducts();
     } catch (e) {
-        setMsg("listMsg", e.message || "Delete failed (check token)", "err");
+        say("listMsg", e.message || "Delete failed (check token / route DELETE /products/{id})", "err");
     }
 }
 
-// Events
-window.addEventListener("DOMContentLoaded", () => {
-    el("btnLogin").addEventListener("click", login);
-    el("btnClearToken").addEventListener("click", () => { TOKEN = ""; showToken(""); setMsg("authMsg", ""); });
-    el("btnReload").addEventListener("click", loadProducts);
-    el("btnCreate").addEventListener("click", createProduct);
-    loadProducts();
+// ===== Products -> dropdown dùng cho Order =====
+async function populateProductSelect() {
+    const base = trimSlash($("prodBase").value);
+    const sel = $("ordProductSelect");
+    if (!sel) return;
+    sel.innerHTML = "";
+    try {
+        const products = await httpJson(`${base}/products`);
+        if (!Array.isArray(products) || products.length === 0) {
+            sel.innerHTML = `<option value="">(Chưa có sản phẩm)</option>`;
+            $("ordPrice") && ($("ordPrice").value = "");
+            return;
+        }
+        for (const p of products) {
+            const opt = document.createElement("option");
+            opt.value = String(p.id);
+            opt.textContent = `${p.name} (còn ${p.quantity})`;
+            opt.dataset.price = p.price ?? 0;
+            opt.dataset.name = p.name ?? "";
+            sel.appendChild(opt);
+        }
+        const first = sel.options[0];
+        if ($("ordPrice")) $("ordPrice").value = first ? first.dataset.price : "";
+    } catch (e) {
+        sel.innerHTML = `<option value="">(Không tải được danh sách)</option>`;
+        $("ordPrice") && ($("ordPrice").value = "");
+        console.error(e);
+    }
+}
+
+// ===================== Orders =====================
+const orderBase = () => trimSlash($("orderBase").value);
+
+async function loadOrders() {
+    try {
+        const list = await httpJson(`${orderBase()}/orders`);
+        const tb = $("ordersBody");
+        if (!tb) return;
+        tb.innerHTML = "";
+        for (const o of list) {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+        <td>${o.id}</td>
+        <td>${o.customerName}</td>
+        <td>${o.customerEmail}</td>
+        <td>${o.status}</td>
+        <td>${o.totalAmount}</td>
+        <td>
+          <button data-id="${o.id}" class="btn-complete">Complete</button>
+          <button data-id="${o.id}" class="btn-cancel danger">Cancel</button>
+          <button data-id="${o.id}" class="btn-del danger">Xóa</button>
+        </td>`;
+            tb.appendChild(tr);
+        }
+        document.querySelectorAll(".btn-complete").forEach(b => b.onclick = () => updateOrderStatus(b.dataset.id, "completed"));
+        document.querySelectorAll(".btn-cancel").forEach(b => b.onclick = () => updateOrderStatus(b.dataset.id, "cancelled"));
+        document.querySelectorAll(".btn-del").forEach(b => b.onclick = () => deleteOrder(b.dataset.id));
+    } catch (e) {
+        say("orderMsg", e.message || "Load orders failed", "err");
+    }
+}
+
+async function createOrder() {
+    const sel = $("ordProductSelect");
+    if (!sel) { say("orderMsg", "Thiếu dropdown sản phẩm", "err"); return; }
+    const opt = sel.options[sel.selectedIndex];
+    const productId = Number(sel.value || 0);
+    if (!productId) { say("orderMsg", "Vui lòng chọn sản phẩm", "err"); return; }
+
+    const productName = opt?.dataset.name || "";
+    const unitPrice = Number(opt?.dataset.price || 0);
+    const quantity = Number(($("ordQty")?.value) || 0);
+
+    const body = {
+        customerName: $("ordName")?.value.trim() || "",
+        customerEmail: $("ordEmail")?.value.trim() || "",
+        items: [{ productId, productName, unitPrice, quantity }]
+    };
+
+    try {
+        await httpJson(`${orderBase()}/orders`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {}) },
+            body: JSON.stringify(body)
+        });
+        say("orderMsg", "Đã tạo đơn!", "ok");
+        await loadOrders();
+    } catch (e) {
+        say("orderMsg", e.message || "Create order failed (check token/stock/CORS)", "err");
+    }
+}
+
+async function updateOrderStatus(id, status) {
+    try {
+        await httpJson(`${orderBase()}/orders/${id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json", ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {}) },
+            body: JSON.stringify({ status })
+        });
+        say("orderMsg", `Đã đổi trạng thái -> ${status}`, "ok");
+        await loadOrders();
+    } catch (e) {
+        say("orderMsg", e.message || "Update status failed", "err");
+    }
+}
+
+async function deleteOrder(id) {
+    if (!confirm("Xóa đơn #" + id + "?")) return;
+    try {
+        await httpJson(`${orderBase()}/orders/${id}`, {
+            method: "DELETE",
+            headers: { ...(TOKEN ? { Authorization: "Bearer " + TOKEN } : {}) }
+        });
+        say("orderMsg", "Đã xóa đơn!", "ok");
+        await loadOrders();
+    } catch (e) {
+        say("orderMsg", e.message || "Delete order failed", "err");
+    }
+}
+
+// ===================== DOM Ready =====================
+document.addEventListener("DOMContentLoaded", () => {
+    // Auth
+    $("btnLogin")?.addEventListener("click", login);
+    $("btnClearToken")?.addEventListener("click", () => { TOKEN = ""; showToken(""); say("authMsg", ""); });
+
+    // Products
+    $("btnReload")?.addEventListener("click", async () => {
+        await loadProducts();
+        await populateProductSelect();
+    });
+    $("btnCreate")?.addEventListener("click", createProduct);
+
+    // Orders
+    $("btnOrdersReload")?.addEventListener("click", loadOrders);
+    $("btnOrderCreate")?.addEventListener("click", createOrder);
+
+    // Cập nhật giá khi đổi sản phẩm
+    const sel = $("ordProductSelect");
+    sel?.addEventListener("change", () => {
+        const opt = sel.options[sel.selectedIndex];
+        if ($("ordPrice")) $("ordPrice").value = opt?.dataset?.price ?? "";
+    });
+
+    // Initial loads
+    (async () => {
+        try { await loadProducts(); } catch (e) { console.error(e); }
+        try { await populateProductSelect(); } catch (e) { console.error(e); }
+        try { await loadOrders(); } catch (e) { console.error(e); }
+    })();
 });

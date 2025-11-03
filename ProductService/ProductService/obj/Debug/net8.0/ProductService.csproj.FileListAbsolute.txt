@@ -213,6 +213,7 @@ C:\Users\MSI\source\SOA\BaiTH3\ProductService\ProductService\obj\Debug\net8.0\Pr
 C:\Users\MSI\source\SOA\BaiTH3\ProductService\ProductService\obj\Debug\net8.0\ProductService.csproj.CoreCompileInputs.cache
 C:\Users\MSI\source\SOA\BaiTH3\ProductService\ProductService\obj\Debug\net8.0\ProductService.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\MSI\source\SOA\BaiTH3\ProductService\ProductService\obj\Debug\net8.0\ProductService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MSI\source\SOA\BaiTH3\ProductService\ProductService\obj\Debug\net8.0\ProductService.sourcelink.json
 C:\Users\MSI\source\SOA\BaiTH3\ProductService\ProductService\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\MSI\source\SOA\BaiTH3\ProductService\ProductService\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\MSI\source\SOA\BaiTH3\ProductService\ProductService\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

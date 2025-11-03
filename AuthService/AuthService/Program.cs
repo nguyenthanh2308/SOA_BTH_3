@@ -1,4 +1,5 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿
+var builder = WebApplication.CreateBuilder(args);
 
 // CORS (cho dev, để UI HTML/JS hoặc UI tách gọi sang)
 builder.Services.AddCors(p =>

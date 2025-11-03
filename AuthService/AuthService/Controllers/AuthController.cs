@@ -13,7 +13,8 @@ namespace AuthService.Controllers;
 public class AuthController : ControllerBase
 {
     private readonly IConfiguration _cfg;
-    // demo user store: username=admin, password=MD5("admin")
+
+    // Demo user (đơn giản cho bài thực hành)
     private static readonly UserRecord DemoUser = new()
     {
         UserName = "admin",
@@ -29,16 +30,16 @@ public class AuthController : ControllerBase
         if (string.IsNullOrWhiteSpace(req.UserName) || string.IsNullOrWhiteSpace(req.Password))
             return BadRequest(new { message = "Missing username/password" });
 
-        // Tuỳ bài: req.Password đã là MD5 sẵn (bạn đang dùng vậy).
-        // Nếu bạn muốn nhận raw password rồi hash tại server, thì thay dòng so sánh thành:
-        // var md5 = HashUtil.Md5Hex(req.Password);
+        // req.Password là MD5 sẵn
         var ok = req.UserName == DemoUser.UserName && req.Password == DemoUser.PasswordHash;
         if (!ok) return Unauthorized(new { message = "Invalid credentials" });
 
+        // 🔹 PHÁT TOKEN TẠI ĐÂY
         var jwt = _cfg.GetSection("Jwt");
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt["Key"]!));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
+        // Claims (nhúng thông tin người dùng vào token)
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, req.UserName),
@@ -47,6 +48,7 @@ public class AuthController : ControllerBase
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
+        // Sinh JWT
         var token = new JwtSecurityToken(
             issuer: jwt["Issuer"],
             audience: jwt["Audience"],
@@ -56,7 +58,16 @@ public class AuthController : ControllerBase
         );
 
         var tokenStr = new JwtSecurityTokenHandler().WriteToken(token);
-        return Ok(new { token = tokenStr });
+
+        return Ok(new
+        {
+            token = tokenStr,
+            issuedAt = DateTime.UtcNow,
+            expiresAt = DateTime.UtcNow.AddMinutes(double.Parse(jwt["ExpireMinutes"] ?? "60")),
+            issuer = jwt["Issuer"],
+            audience = jwt["Audience"],
+            role = DemoUser.Role
+        });
     }
 
     [HttpGet("hello")]

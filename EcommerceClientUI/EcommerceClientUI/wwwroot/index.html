@@ -3,44 +3,60 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>E-Commerce Demo UI (HTML + JS)</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>E-Commerce Demo UI (HTML+CSS+JS)</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <main class="container">
-        <h1>E-Commerce Demo UI (HTML + JS)</h1>
-        <p class="muted">Đăng nhập qua <b>AuthService</b> để lấy <b>JWT</b>, rồi gọi <b>ProductService</b> để CRUD sản phẩm (SOA).</p>
+        <h1>E-Commerce Demo UI (HTML + CSS + JS)</h1>
+        <p class="muted">
+            UI tĩnh chạy trên Visual Studio (ASP.NET Core Empty + Static Files).
+            Gọi API của <b>AuthService</b>, <b>ProductService</b> và <b>OrderService</b>.
+        </p>
 
-        <section class="grid-2">
+        <!-- CẤU HÌNH DỊCH VỤ -->
+        <section class="grid-3">
             <div class="card">
-                <h2>Cấu hình dịch vụ</h2>
+                <h2>AuthService</h2>
                 <label>AuthService URL</label>
                 <input id="authBase" type="text" value="https://localhost:7268" />
+            </div>
+
+            <div class="card">
+                <h2>ProductService</h2>
                 <label>ProductService URL</label>
                 <input id="prodBase" type="text" value="https://localhost:7181" />
             </div>
 
             <div class="card">
-                <h2>Đăng nhập (lấy JWT)</h2>
-                <div class="grid-2 tight">
-                    <div>
-                        <label>Username</label>
-                        <input id="username" type="text" value="admin" />
-                    </div>
-                    <div>
-                        <label>Password (theo rule bài 2)</label>
-                        <input id="password" type="text" value="21232f297a57a5a743894a0e4a801fc3" />
-                    </div>
-                </div>
-                <div class="row">
-                    <button id="btnLogin">Login</button>
-                    <button id="btnClearToken" class="secondary">Clear token</button>
-                </div>
-                <div id="authMsg" class="msg"></div>
-                <div id="tokenBox" class="tokenBox hidden"></div>
+                <h2>OrderService</h2>
+                <label>OrderService URL</label>
+                <input id="orderBase" type="text" value="https://localhost:7182" />
             </div>
         </section>
 
+        <!-- ĐĂNG NHẬP -->
+        <section class="card">
+            <h2>Đăng nhập (lấy JWT)</h2>
+            <div class="grid-2 tight">
+                <div>
+                    <label>Username</label>
+                    <input id="username" type="text" value="admin" />
+                </div>
+                <div>
+                    <label>Password (theo rule bài 2)</label>
+                    <input id="password" type="text" value="21232f297a57a5a743894a0e4a801fc3" />
+                </div>
+            </div>
+            <div class="row">
+                <button id="btnLogin">Login</button>
+                <button id="btnClearToken" class="secondary">Clear token</button>
+            </div>
+            <div id="authMsg" class="msg"></div>
+            <div id="tokenBox" class="tokenBox hidden"></div>
+        </section>
+
+        <!-- SẢN PHẨM -->
         <section class="card">
             <div class="row space">
                 <h2>Sản phẩm</h2>
@@ -83,16 +99,73 @@
             <p class="muted small">* Thêm/Sửa/Xóa yêu cầu header <code>Authorization: Bearer &lt;token&gt;</code>. Thiếu hoặc token sai → 401.</p>
         </section>
 
+        <!-- ĐƠN HÀNG -->
         <section class="card">
-            <h2>Gợi ý xử lý lỗi thường gặp</h2>
+            <div class="row space">
+                <h2>Đơn hàng</h2>
+                <button id="btnOrdersReload" class="secondary">Tải lại</button>
+            </div>
+
+            <!-- Chỉ nhập Tên KH + Email -->
+            <div class="grid-4 form-create">
+                <div>
+                    <label>Tên KH</label>
+                    <input id="ordName" type="text" placeholder="Nguyễn Văn A" />
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input id="ordEmail" type="email" placeholder="a@example.com" />
+                </div>
+                <div class="align-end">
+                    <button id="btnOrderCreate">Tạo đơn</button>
+                </div>
+            </div>
+
+            <!-- Chọn sản phẩm từ list -->
+            <div class="grid-3">
+                <div>
+                    <label>Chọn sản phẩm</label>
+                    <select id="ordProductSelect"></select>
+                </div>
+                <div>
+                    <label>Giá</label>
+                    <input id="ordPrice" type="number" disabled />
+                </div>
+                <div>
+                    <label>SL</label>
+                    <input id="ordQty" type="number" value="1" min="1" />
+                </div>
+            </div>
+
+            <div id="orderMsg" class="msg"></div>
+
+            <div class="tableWrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Khách hàng</th>
+                            <th>Email</th>
+                            <th>Trạng thái</th>
+                            <th>Tổng</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Ghi chú</h2>
             <ul class="small">
-                <li><b>CORS</b>: bật <code>app.UseCors()</code> + <code>AllowAnyOrigin/AnyHeader/AnyMethod</code> ở cả AuthService và ProductService khi dev.</li>
-                <li><b>Self-signed HTTPS</b>: lần đầu mở <code>https://localhost:7268</code> và <code>https://localhost:7181</code> trong trình duyệt, bấm “Advanced/Continue”.</li>
-                <li><b>MySQL</b>: nếu gặp caching_sha2_password, thêm <code>AllowPublicKeyRetrieval=True</code> khi <code>SslMode=None</code>.</li>
+                <li><b>Route PUT/DELETE</b> trong ProductService nên là <code>PUT /products/{id}</code> & <code>DELETE /products/{id}</code>.</li>
+                <li><b>CORS</b> dev: <code>app.UseCors()</code> với AllowAnyOrigin/Header/Method.</li>
+                <li><b>HTTPS tự ký</b>: lần đầu mở 7268/7181/7282 → Advanced → Continue để trust.</li>
             </ul>
         </section>
     </main>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

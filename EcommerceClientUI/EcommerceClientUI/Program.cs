@@ -1,6 +1,6 @@
 ﻿var builder = WebApplication.CreateBuilder(args);
 
-// (tùy chọn cho DEV) bật CORS nếu bạn muốn truy cập từ origin khác
+// (Dev) CORS: cho phép gọi từ mọi origin nếu cần
 builder.Services.AddCors(p =>
     p.AddDefaultPolicy(b => b.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
@@ -9,15 +9,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    // với app FE tĩnh, có thể tắt HSTS để dễ test: // app.UseHsts();
 }
 
 app.UseHttpsRedirection();
+app.UseCors();          // bật CORS khi dev
 
-app.UseCors();              // nếu dùng CORS dev
-
-// Cho phép phục vụ file mặc định: index.html
-app.UseDefaultFiles();      // tìm index.html trong wwwroot
-app.UseStaticFiles();       // phục vụ file tĩnh từ wwwroot
+// phục vụ file tĩnh từ wwwroot, tự nhận index.html
+app.UseDefaultFiles();  // tìm index.html
+app.UseStaticFiles();
 
 app.Run();

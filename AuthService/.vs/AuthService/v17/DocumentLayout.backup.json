@@ -3,11 +3,87 @@
   "WorkspaceRootPath": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0516EFD6-748D-A363-BD6C-20868DF33135}|..\\ProductService\\ProductService\\ProductService.csproj|c:\\users\\msi\\source\\soa\\baith3\\productservice\\productservice\\productservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\controllers\\orderitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\data\\orderdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|c:\\users\\msi\\source\\soa\\baith3\\authservice\\authservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|solutionrelative:authservice\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|c:\\users\\msi\\source\\soa\\baith3\\authservice\\authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|solutionrelative:authservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0516EFD6-748D-A363-BD6C-20868DF33135}|..\\ProductService\\ProductService\\ProductService.csproj|c:\\users\\msi\\source\\soa\\baith3\\productservice\\productservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0516EFD6-748D-A363-BD6C-20868DF33135}|..\\ProductService\\ProductService\\ProductService.csproj|c:\\users\\msi\\source\\soa\\baith3\\productservice\\productservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|c:\\users\\msi\\source\\soa\\baith3\\authservice\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|solutionrelative:authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|c:\\users\\msi\\source\\soa\\baith3\\authservice\\authservice\\authservice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|solutionrelative:authservice\\authservice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|c:\\users\\msi\\source\\soa\\baith3\\authservice\\authservice\\utils\\hashutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|solutionrelative:authservice\\utils\\hashutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|c:\\users\\msi\\source\\soa\\baith3\\authservice\\authservice\\models\\userrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|solutionrelative:authservice\\models\\userrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|c:\\users\\msi\\source\\soa\\baith3\\authservice\\authservice\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|solutionrelative:authservice\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|c:\\users\\msi\\source\\soa\\baith3\\authservice\\authservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA9F7C0A-B4DA-49C7-9F39-8E79504F2CC2}|AuthService\\AuthService.csproj|solutionrelative:authservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0516EFD6-748D-A363-BD6C-20868DF33135}|..\\ProductService\\ProductService\\ProductService.csproj|c:\\users\\msi\\source\\soa\\baith3\\productservice\\productservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,24 +93,141 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductService",
-              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\ProductService.csproj",
-              "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\ProductService.csproj",
-              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\ProductService.csproj",
-              "RelativeToolTip": "..\\ProductService\\ProductService\\ProductService.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-20T08:48:40.465Z",
+              "DocumentIndex": 1,
+              "Title": "OrderItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Controllers\\OrderItemsController.cs",
+              "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Controllers\\OrderItemsController.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Controllers\\OrderItemsController.cs",
+              "RelativeToolTip": "..\\OrderService\\OrderService\\Controllers\\OrderItemsController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowIYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:27:28.668Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "OrderDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Data\\OrderDbContext.cs",
+              "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Data\\OrderDbContext.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Data\\OrderDbContext.cs",
+              "RelativeToolTip": "..\\OrderService\\OrderService\\Data\\OrderDbContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwEEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:55:51.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\appsettings.json",
+              "RelativeDocumentMoniker": "AuthService\\appsettings.json",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\appsettings.json",
+              "RelativeToolTip": "AuthService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T11:59:28.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\appsettings.json",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\appsettings.json",
+              "RelativeToolTip": "..\\OrderService\\OrderService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T11:57:24.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Properties\\launchSettings.json",
+              "RelativeToolTip": "..\\OrderService\\OrderService\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T11:56:18.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Properties\\launchSettings.json",
+              "RelativeToolTip": "..\\ProductService\\ProductService\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T11:56:07.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "..\\OrderService\\OrderService\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwLsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T00:51:54.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Models\\OrderItem.cs",
+              "RelativeToolTip": "..\\OrderService\\OrderService\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAkwAcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T00:46:21.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Models\\Order.cs",
+              "RelativeToolTip": "..\\OrderService\\OrderService\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:34:57.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Program.cs",
+              "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Program.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Program.cs",
+              "RelativeToolTip": "..\\OrderService\\OrderService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T00:47:01.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Program.cs",
               "RelativeDocumentMoniker": "AuthService\\Program.cs",
@@ -44,6 +237,181 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-20T08:41:54.218Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "AuthService\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "AuthService\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwEAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:06:54.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\appsettings.json",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\appsettings.json",
+              "RelativeToolTip": "..\\ProductService\\ProductService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T11:57:55.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthService.http",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\AuthService.http",
+              "RelativeDocumentMoniker": "AuthService\\AuthService.http",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\AuthService.http",
+              "RelativeToolTip": "AuthService\\AuthService.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-11-03T08:06:44.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HashUtil.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Utils\\HashUtil.cs",
+              "RelativeDocumentMoniker": "AuthService\\Utils\\HashUtil.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Utils\\HashUtil.cs",
+              "RelativeToolTip": "AuthService\\Utils\\HashUtil.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:06:50.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserRecord.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Models\\UserRecord.cs",
+              "RelativeDocumentMoniker": "AuthService\\Models\\UserRecord.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Models\\UserRecord.cs",
+              "RelativeToolTip": "AuthService\\Models\\UserRecord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:07:15.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "AuthService\\Models\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "AuthService\\Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:07:13.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "script.js",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\script.js",
+              "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\script.js",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\script.js",
+              "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\script.js",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAowLwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-24T00:38:54.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "AuthService\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Properties\\launchSettings.json",
+              "RelativeToolTip": "AuthService\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T11:56:24.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\index.html",
+              "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\index.html",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAgwJ0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-24T00:38:48.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\Program.cs",
+              "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\Program.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\Program.cs",
+              "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T00:38:26.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\appsettings.json",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\appsettings.json",
+              "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T11:59:33.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Program.cs",
+              "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\Program.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Program.cs",
+              "RelativeToolTip": "..\\ProductService\\ProductService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T11:59:47.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T11:56:39.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\style.css",
+              "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\style.css",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\style.css",
+              "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\style.css",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAgwF8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-24T00:58:49.721Z"
             }
           ]
         }

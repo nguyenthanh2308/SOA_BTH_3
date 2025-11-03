@@ -29,8 +29,8 @@ C:\Users\MSI\source\SOA\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\Eco
 C:\Users\MSI\source\SOA\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\ref\EcommerceClientUI.dll
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\appsettings.json
-C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\EcommerceClientUI.staticwebassets.endpoints.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\EcommerceClientUI.staticwebassets.runtime.json
+C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\EcommerceClientUI.staticwebassets.endpoints.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\EcommerceClientUI.exe
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\EcommerceClientUI.deps.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\EcommerceClientUI.runtimeconfig.json
@@ -42,6 +42,7 @@ C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.AssemblyInfo.cs
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.csproj.CoreCompileInputs.cache
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.sourcelink.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

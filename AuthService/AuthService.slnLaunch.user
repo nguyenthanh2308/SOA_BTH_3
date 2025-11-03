@@ -13,6 +13,10 @@
       {
         "Path": "..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "..\\OrderService\\OrderService\\OrderService.csproj",
+        "Action": "Start"
       }
     ]
   }
