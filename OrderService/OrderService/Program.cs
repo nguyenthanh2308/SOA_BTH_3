@@ -40,11 +40,10 @@ builder.Services.AddCors(p => p.AddDefaultPolicy(policy =>
 // =======================
 // 5) HttpClient -> ProductService
 // =======================
-builder.Services.AddHttpClient("products", (sp, client) =>
+builder.Services.AddHttpClient("products", c =>
 {
-    var baseUrl = builder.Configuration["Services:Product"]; // ví dụ https://localhost:7181
-    client.BaseAddress = new Uri(baseUrl!);
-});
+    c.BaseAddress = new Uri(builder.Configuration["Services:Product"]!);
+}); // vd: https://localhost:7181
 
 // =======================
 // 6) JWT Auth (đồng bộ với AuthService)

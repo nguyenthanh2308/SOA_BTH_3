@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>Shop · E-Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <h1>Cửa hàng</h1>
+        <div class="right">
+            <span id="hello"></span>
+            <button id="btnLogout" class="btn danger">Đăng xuất</button>
+        </div>
+    </header>
+
+    <main class="container grid-2">
+        <!-- Sản phẩm -->
+        <section class="card">
+            <div class="row between">
+                <h2>Sản phẩm</h2>
+                <button id="btnReload" class="btn ghost">Tải lại</button>
+            </div>
+            <div id="prodMsg" class="msg"></div>
+            <table class="table">
+                <thead>
+                    <tr><th>ID</th><th>Tên</th><th>Giá</th><th>Tồn</th><th>SL</th><th></th></tr>
+                </thead>
+                <tbody id="prodBody"></tbody>
+            </table>
+        </section>
+
+        <!-- Giỏ hàng -->
+        <section class="card">
+            <h2>Giỏ hàng</h2>
+            <div id="cartMsg" class="msg"></div>
+            <table class="table">
+                <thead>
+                    <tr><th>Tên</th><th>SL</th><th>Giá</th><th>Tổng</th><th></th></tr>
+                </thead>
+                <tbody id="cartBody"></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="right bold">Tổng:</td>
+                        <td id="cartTotal" class="bold">0</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="row right">
+                <button id="btnCheckout" class="btn primary">Thanh toán</button>
+            </div>
+        </section>
+
+        <!-- Lịch sử -->
+        <section class="card">
+            <h2>Lịch sử đơn hàng</h2>
+            <div class="tabs">
+                <button class="tab active" data-tab="pending">Đang xử lý</button>
+                <button class="tab" data-tab="done">Đã hoàn thành</button>
+            </div>
+            <div id="hisMsg" class="msg"></div>
+            <div id="pane-pending"></div>
+            <div id="pane-done" class="hidden"></div>
+        </section>
+    </main>
+
+    <script src="js/auth.js" defer></script>
+    <script src="js/shop.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+﻿(() => {
+    // ===== helpers (không dùng $ toàn cục) =====
+    const byId = (id) => document.getElementById(id);
+    const LS = { urls: "CFG_URLS", token: "TOKEN" };
+    const cfg = (() => { try { return JSON.parse(localStorage.getItem(LS.urls) || "{}"); } catch { return {}; } })();
+    const TOKEN = localStorage.getItem(LS.token) || "";
+
+    function say(id, text, type = "info") {
+        const el = byId(id);
+        if (!el) return;
+        el.className = "msg " + type;
+        el.textContent = text || "";
+    }
+    function httpJson(url, opts = {}) {
+        return fetch(url, opts).then(async (r) => {
+            if (!r.ok) {
+                const t = await r.text().catch(() => r.statusText);
+                throw new Error(`${r.status} ${r.statusText} - ${t}`);
+            }
+            const ct = r.headers.get("content-type") || "";
+            return ct.includes("application/json") ? r.json() : r.text();
+        });
+    }
+    function authHeaders(extra = {}) {
+        return TOKEN ? { ...extra, Authorization: "Bearer " + TOKEN } : extra;
+    }
+
+    // ===== guard =====
+    function guard() {
+        if (!TOKEN) {
+            window.location.href = "index.html";
+            return false;
+        }
+        const peek = TOKEN.slice(0, 12) + "..." + TOKEN.slice(-8);
+        const peekBox = byId("tokenPeek");
+        if (peekBox) peekBox.textContent = "JWT: " + peek;
+        if (!cfg?.product || !cfg?.order) {
+            alert("Thiếu cấu hình URL (Product/Order). Vui lòng đăng nhập lại để lưu cấu hình.");
+            window.location.href = "index.html";
+            return false;
+        }
+        return true;
+    }
+
+    // ===== Products =====
+    async function loadProducts() {
+        say("prodMsg", "Đang tải...");
+        try {
+            const items = await httpJson(`${cfg.product}/products`);
+            const body = byId("tbody");
+            body.innerHTML = "";
+            for (const p of items) {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+          <td>${p.id}</td>
+          <td><input value="${p.name ?? ""}"></td>
+          <td><input type="number" value="${p.price ?? 0}"></td>
+          <td><input type="number" value="${p.quantity ?? 0}"></td>
+          <td>
+            <button class="btn btn-save">Lưu</button>
+            <button class="btn danger btn-del">Xóa</button>
+          </td>`;
+                const [ipName, ipPrice, ipQty] = tr.querySelectorAll("input");
+                tr.querySelector(".btn-save").onclick = async () => {
+                    try {
+                        await httpJson(`${cfg.product}/products/${p.id}`, {
+                            method: "PUT",
+                            headers: authHeaders({ "Content-Type": "application/json" }),
+                            body: JSON.stringify({
+                                id: p.id,
+                                name: ipName.value,
+                                price: Number(ipPrice.value || 0),
+                                quantity: Number(ipQty.value || 0),
+                            }),
+                        });
+                        say("prodMsg", "Đã lưu!", "ok");
+                    } catch (e) {
+                        say("prodMsg", e.message, "err");
+                    }
+                };
+                tr.querySelector(".btn-del").onclick = async () => {
+                    if (!confirm("Xóa SP #" + p.id + "?")) return;
+                    try {
+                        await httpJson(`${cfg.product}/products/${p.id}`, {
+                            method: "DELETE",
+                            headers: authHeaders(),
+                        });
+                        await loadProducts();
+                        say("prodMsg", "Đã xóa!", "ok");
+                    } catch (e) {
+                        say("prodMsg", e.message, "err");
+                    }
+                };
+                body.appendChild(tr);
+            }
+            say("prodMsg", "");
+        } catch (e) {
+            say("prodMsg", e.message, "err");
+        }
+    }
+
+    async function createProduct() {
+        try {
+            await httpJson(`${cfg.product}/products`, {
+                method: "POST",
+                headers: authHeaders({ "Content-Type": "application/json" }),
+                body: JSON.stringify({
+                    name: byId("createName").value.trim(),
+                    price: Number(byId("createPrice").value || 0),
+                    quantity: Number(byId("createQty").value || 0),
+                }),
+            });
+            byId("createName").value = byId("createPrice").value = byId("createQty").value = "";
+            await loadProducts();
+            say("prodMsg", "Đã thêm!", "ok");
+        } catch (e) {
+            say("prodMsg", e.message, "err");
+        }
+    }
+
+    // ===== Orders =====
+    async function loadOrders() {
+        say("orderMsg", "Đang tải...");
+        try {
+            const list = await httpJson(`${cfg.order}/orders`);
+            const tb = byId("ordersBody");
+            tb.innerHTML = "";
+            for (const o of list) {
+                const items = (o.items || []).map((i) => `${i.productName} x${i.quantity}`).join(", ");
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+          <td>${o.id}</td>
+          <td>${o.customerName || ""}</td>
+          <td>${o.customerEmail || ""}</td>
+          <td><span class="badge ${o.status}">${o.status}</span></td>
+          <td>${o.totalAmount ?? 0}</td>
+          <td>${items}</td>
+          <td>
+            <button class="btn small btn-ok">Complete</button>
+            <button class="btn small warn btn-cancel">Cancel</button>
+            <button class="btn small danger btn-del">Xóa</button>
+          </td>`;
+                tr.querySelector(".btn-ok").onclick = () => updateStatus(o.id, "completed");
+                tr.querySelector(".btn-cancel").onclick = () => updateStatus(o.id, "cancelled");
+                tr.querySelector(".btn-del").onclick = async () => {
+                    if (!confirm("Xóa đơn #" + o.id + "?")) return;
+                    try {
+                        await httpJson(`${cfg.order}/orders/${o.id}`, { method: "DELETE", headers: authHeaders() });
+                        await loadOrders();
+                    } catch (e) {
+                        say("orderMsg", e.message, "err");
+                    }
+                };
+                tb.appendChild(tr);
+            }
+            say("orderMsg", "");
+        } catch (e) {
+            say("orderMsg", e.message, "err");
+        }
+    }
+
+    async function updateStatus(id, status) {
+        try {
+            await httpJson(`${cfg.order}/orders/${id}`, {
+                method: "PUT",
+                headers: authHeaders({ "Content-Type": "application/json" }),
+                body: JSON.stringify({ status }),
+            });
+            // reload both orders and products so admin sees updated stock immediately
+            await loadOrders();
+            await loadProducts();
+            say("orderMsg", `Đã chuyển ${id} → ${status}`, "ok");
+        } catch (e) {
+            say("orderMsg", e.message, "err");
+        }
+    }
+
+    // ===== init =====
+    document.addEventListener("DOMContentLoaded", () => {
+        if (!guard()) return;
+        const logoutBtn = byId("btnLogout");
+        if (logoutBtn) logoutBtn.onclick = () => window.logout();
+
+        const btnCreate = byId("btnCreate");
+        if (btnCreate) btnCreate.onclick = createProduct;
+
+        const btnReload = byId("btnReload");
+        if (btnReload) btnReload.onclick = loadProducts;
+
+        const btnOrdersReload = byId("btnOrdersReload");
+        if (btnOrdersReload) btnOrdersReload.onclick = loadOrders;
+
+        loadProducts();
+        loadOrders();
+    });
+})();

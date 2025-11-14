@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "ProductService.Controllers.ProductsController",
+    "ContainingType": "ProductService.Controllers.ProductController",
     "Method": "GetAll",
     "RelativePath": "products",
     "HttpMethod": "GET",
@@ -10,7 +10,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProductService.Controllers.ProductsController",
+    "ContainingType": "ProductService.Controllers.ProductController",
     "Method": "Create",
     "RelativePath": "products",
     "HttpMethod": "POST",
@@ -18,7 +18,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "p",
+        "Name": "input",
         "Type": "ProductService.Models.Product",
         "IsRequired": true
       }
@@ -26,7 +26,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProductService.Controllers.ProductsController",
+    "ContainingType": "ProductService.Controllers.ProductController",
     "Method": "GetById",
     "RelativePath": "products/{id}",
     "HttpMethod": "GET",
@@ -42,7 +42,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProductService.Controllers.ProductsController",
+    "ContainingType": "ProductService.Controllers.ProductController",
     "Method": "Update",
     "RelativePath": "products/{id}",
     "HttpMethod": "PUT",
@@ -55,7 +55,7 @@
         "IsRequired": true
       },
       {
-        "Name": "p",
+        "Name": "input",
         "Type": "ProductService.Models.Product",
         "IsRequired": true
       }
@@ -63,7 +63,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProductService.Controllers.ProductsController",
+    "ContainingType": "ProductService.Controllers.ProductController",
     "Method": "Delete",
     "RelativePath": "products/{id}",
     "HttpMethod": "DELETE",
@@ -73,6 +73,38 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProductService.Controllers.ProductStockController",
+    "Method": "Decrease",
+    "RelativePath": "products/stock/decrease",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "ProductService.DTOs.StockAdjustRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProductService.Controllers.ProductStockController",
+    "Method": "Increase",
+    "RelativePath": "products/stock/increase",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "ProductService.DTOs.StockAdjustRequest",
         "IsRequired": true
       }
     ],

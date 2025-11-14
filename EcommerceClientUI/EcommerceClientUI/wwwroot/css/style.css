@@ -1,0 +1,141 @@
+﻿:root {
+    --fg: #222;
+    --muted: #6b7280;
+    --ok: #16a34a;
+    --err: #dc2626;
+    --bg: #fafafa;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: system-ui,-apple-system,Segoe UI,Roboto;
+    margin: 0;
+    color: var(--fg);
+    background: var(--bg);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 0 16px
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+.space {
+    justify-content: space-between
+}
+
+.align-end {
+    display: flex;
+    align-items: end
+}
+
+.muted {
+    color: var(--muted)
+}
+
+.small {
+    font-size: .9rem
+}
+
+button {
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 10px;
+    background: #0ea5e9;
+    color: white;
+    cursor: pointer
+}
+
+    button.secondary {
+        background: #64748b
+    }
+
+    button.danger {
+        background: #ef4444
+    }
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: white
+}
+
+.tableWrap {
+    overflow: auto
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+th, td {
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+    text-align: left
+}
+
+.msg {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 8px
+}
+
+    .msg.ok {
+        background: #ecfdf5;
+        color: #065f46
+    }
+
+    .msg.err {
+        background: #fef2f2;
+        color: #991b1b
+    }
+
+.tokenBox {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    font-family: ui-monospace
+}
+
+.hidden {
+    display: none
+}

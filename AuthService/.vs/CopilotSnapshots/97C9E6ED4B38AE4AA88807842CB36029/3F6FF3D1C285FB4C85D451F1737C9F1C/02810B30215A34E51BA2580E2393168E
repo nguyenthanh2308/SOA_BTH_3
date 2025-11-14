@@ -1,0 +1,43 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace OrderService.Migrations
+{
+    /// <inheritdoc />
+    public partial class ClarifyOrderMapping : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AlterDatabase()
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            // Add customer_id column only if it does not exist, then backfill from customers using email
+            migrationBuilder.Sql(@"
+ALTER TABLE `orders` ADD COLUMN IF NOT EXISTS `customer_id` INT NULL;
+");
+
+            // Backfill customer_id where possible by matching customer_email to customers.email (case-insensitive)
+            migrationBuilder.Sql(@"
+UPDATE `orders` o
+JOIN `customers` c ON LOWER(o.customer_email) = LOWER(c.email)
+SET o.customer_id = c.id
+WHERE o.customer_id IS NULL;
+");
+
+            // Optionally create index if not exists (MySQL 8+ supports CREATE INDEX IF NOT EXISTS)
+            migrationBuilder.Sql(@"
+CREATE INDEX IF NOT EXISTS `IX_orders_customer_id` ON `orders`(`customer_id`);
+");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            // Remove column if it exists
+            migrationBuilder.Sql(@"ALTER TABLE `orders` DROP COLUMN IF EXISTS `customer_id`;" );
+        }
+    }
+}

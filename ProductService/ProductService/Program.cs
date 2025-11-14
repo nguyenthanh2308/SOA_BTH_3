@@ -1,59 +1,67 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using ProductService.Data;
 using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// =========================
-// 1) EF Core + MySQL (Pomelo)
-// =========================
+// ============= EF Core + MySQL (Pomelo) =============
 var cs = builder.Configuration.GetConnectionString("ProductDb");
 builder.Services.AddDbContext<ProductDbContext>(opt =>
     opt.UseMySql(cs, ServerVersion.AutoDetect(cs)));
 
-// =========================
-// 2) Controllers + Swagger
-// =========================
-builder.Services.AddControllers();
+// ============= Controllers + JSON =============
+builder.Services.AddControllers()
+    .AddJsonOptions(o =>
+    {
+        o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        o.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    });
+
+// ============= Swagger =============
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(o =>
 {
+    // BẮT BUỘC: đăng ký tài liệu "v1"
+    o.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "ProductService",
+        Version = "v1",
+        Description = "E-Commerce Product Service API"
+    });
+
     // Cho phép nhập Bearer token trên Swagger
-    o.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    o.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+        Type = SecuritySchemeType.Http,
         Scheme = "bearer",
         BearerFormat = "JWT",
-        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        In = ParameterLocation.Header,
         Description = "Nhập: Bearer {token}"
     });
-    o.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    o.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
-            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            new OpenApiSecurityScheme
             {
-                Reference = new Microsoft.OpenApi.Models.OpenApiReference
-                {
-                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
             },
             Array.Empty<string>()
         }
     });
+
+    // ĐỪNG gọi IncludeXmlComments nếu chưa cấu hình file XML
 });
 
-// =========================
-// 3) JWT Bearer Authentication
-//    (validate token do AuthService cấp)
-// =========================
+// ============= JWT Bearer =============
 var jwt = builder.Configuration.GetSection("Jwt");
 var keyBytes = Encoding.UTF8.GetBytes(jwt["Key"]!);
-builder.Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(opt =>
     {
         opt.TokenValidationParameters = new TokenValidationParameters
@@ -71,7 +79,7 @@ builder.Services
 
 builder.Services.AddAuthorization();
 
-// (Tuỳ chọn) CORS cho frontend dev, mở rộng sau cho production.
+// ============= CORS (dev) =============
 builder.Services.AddCors(p =>
 {
     p.AddDefaultPolicy(policy =>
@@ -80,19 +88,21 @@ builder.Services.AddCors(p =>
 
 var app = builder.Build();
 
-// =========================
-// 4) Middleware pipeline
-// =========================
+// ============= Pipeline =============
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();           // hiển thị stacktrace nếu /swagger/v1/swagger.json lỗi
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProductService v1");
+        c.RoutePrefix = "swagger";
+    });
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors();               // nếu cần cho frontend dev
-app.UseAuthentication();     // PHẢI trước UseAuthorization
+app.UseCors();
+app.UseAuthentication();   // phải trước UseAuthorization
 app.UseAuthorization();
 
 app.MapControllers();

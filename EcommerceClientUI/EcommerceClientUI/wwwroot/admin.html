@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin · E-Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <h1>Quản trị</h1>
+        <div class="right">
+            <span id="tokenPeek" class="muted"></span>
+            <button id="btnLogout" class="btn danger">Đăng xuất</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Sản phẩm</h2>
+            <div class="row gap">
+                <input id="createName" placeholder="Tên sản phẩm" />
+                <input id="createPrice" type="number" placeholder="Giá" />
+                <input id="createQty" type="number" placeholder="Tồn" />
+                <button id="btnCreate" class="btn">Thêm</button>
+                <button id="btnReload" class="btn ghost">Tải lại</button>
+            </div>
+            <div id="prodMsg" class="msg"></div>
+            <table class="table">
+                <thead>
+                    <tr><th>ID</th><th>Tên</th><th>Giá</th><th>Tồn</th><th>Hành động</th></tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <div class="row between">
+                <h2>Đơn hàng</h2>
+                <button id="btnOrdersReload" class="btn ghost">Tải lại</button>
+            </div>
+            <div id="orderMsg" class="msg"></div>
+            <table class="table">
+                <thead>
+                    <tr><th>ID</th><th>Khách</th><th>Email</th><th>Trạng thái</th><th>Tổng</th><th>Hàng</th><th>Hành động</th></tr>
+                </thead>
+                <tbody id="ordersBody"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/auth.js" defer></script>
+    <script src="js/admin.js" defer></script>
+</body>
+</html>

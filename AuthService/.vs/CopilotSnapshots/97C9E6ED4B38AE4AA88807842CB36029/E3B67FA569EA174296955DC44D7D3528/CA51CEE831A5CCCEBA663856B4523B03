@@ -1,0 +1,164 @@
+﻿(() => {
+    // ===== helpers =====
+    const byId = (id) => document.getElementById(id);
+    const LS = { urls: "CFG_URLS", customer: "CUSTOMER", cart: "CART" };
+    const cfg = (() => { try { return JSON.parse(localStorage.getItem(LS.urls) || "{}"); } catch { return {}; } })();
+    const me = (() => { try { return JSON.parse(localStorage.getItem(LS.customer) || "null"); } catch { return null; } })();
+
+    function say(id, text, type = "info") { const el = byId(id); if (!el) return; el.className = "msg " + type; el.textContent = text || ""; }
+    function httpJson(url, opts = {}) {
+        return fetch(url, opts).then(async (r) => {
+            if (!r.ok) { const t = await r.text().catch(() => r.statusText); throw new Error(`${r.status} ${r.statusText} - ${t}`); }
+            const ct = r.headers.get("content-type") || ""; return ct.includes("application/json") ? r.json() : r.text();
+        });
+    }
+    function loadCart() { try { return JSON.parse(localStorage.getItem(LS.cart) || "[]"); } catch { return []; } }
+    function saveCart(items) { localStorage.setItem(LS.cart, JSON.stringify(items)); renderCart(); }
+
+    function guard() {
+        if (!me) { window.location.href = "index.html"; return false; }
+        if (!cfg?.product || !cfg?.order) {
+            alert("Thiếu cấu hình URL. Vui lòng đăng nhập lại.");
+            window.location.href = "index.html";
+            return false;
+        }
+        return true;
+    }
+
+    // ===== Products =====
+    async function loadProducts() {
+        say("prodMsg", "Đang tải...");
+        try {
+            const list = await httpJson(`${cfg.product}/products`);
+            const tb = byId("prodBody"); tb.innerHTML = "";
+            for (const p of list) {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+          <td>${p.id}</td>
+          <td>${p.name}</td>
+          <td>${p.price}</td>
+          <td>${p.quantity}</td>
+          <td><input type="number" min="1" value="1" style="width:80px"></td>
+          <td><button class="btn small">Thêm</button></td>`;
+                const qtyInput = tr.querySelector("input");
+                tr.querySelector("button").onclick = () => addToCart({
+                    productId: p.id, productName: p.name, unitPrice: p.price, quantity: Number(qtyInput.value || 1)
+                });
+                tb.appendChild(tr);
+            }
+            say("prodMsg", "");
+        } catch (e) {
+            say("prodMsg", e.message, "err");
+        }
+    }
+
+    // ===== Cart =====
+    function addToCart(item) {
+        const cart = loadCart();
+        const idx = cart.findIndex(x => x.productId === item.productId);
+        if (idx >= 0) cart[idx].quantity += item.quantity; else cart.push(item);
+        saveCart(cart);
+    }
+    function removeCart(id) {
+        const cart = loadCart().filter(x => x.productId !== id);
+        saveCart(cart);
+    }
+    function renderCart() {
+        const cart = loadCart();
+        const tb = byId("cartBody"); tb.innerHTML = "";
+        let total = 0;
+        for (const i of cart) {
+            const line = i.quantity * i.unitPrice; total += line;
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+        <td>${i.productName}</td>
+        <td>${i.quantity}</td>
+        <td>${i.unitPrice}</td>
+        <td>${line}</td>
+        <td><button class="btn small danger">Xóa</button></td>`;
+            tr.querySelector("button").onclick = () => removeCart(i.productId);
+            tb.appendChild(tr);
+        }
+        byId("cartTotal").textContent = total.toString();
+    }
+
+    // ===== Checkout =====
+    async function checkout() {
+        const cart = loadCart();
+        if (cart.length === 0) { say("cartMsg", "Giỏ hàng trống", "err"); return; }
+        const body = {
+            customerName: me.fullName || me.email,
+            customerEmail: me.email,
+            items: cart.map(i => ({
+                productId: i.productId,
+                productName: i.productName,
+                unitPrice: i.unitPrice,
+                quantity: i.quantity
+            }))
+        };
+        try {
+            say("cartMsg", "Đang tạo đơn...");
+            await httpJson(`${cfg.order}/orders`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" }, // nếu backend yêu cầu JWT, thêm ở đây
+                body: JSON.stringify(body)
+            });
+            localStorage.removeItem(LS.cart);
+            renderCart();
+            say("cartMsg", "Đã tạo đơn!", "ok");
+            await loadHistory();
+        } catch (e) {
+            say("cartMsg", e.message || "Tạo đơn thất bại", "err");
+        }
+    }
+
+    // ===== History =====
+    async function loadHistory() {
+        try {
+            const all = await httpJson(`${cfg.order}/orders`);
+            const mine = (all || []).filter(o => (o.customerEmail || "").toLowerCase() === (me.email || "").toLowerCase());
+            const pending = mine.filter(o => o.status === "pending");
+            const done = mine.filter(o => o.status === "completed");
+            byId("pane-pending").innerHTML = renderOrderList(pending);
+            byId("pane-done").innerHTML = renderOrderList(done);
+            say("hisMsg", "");
+        } catch (e) { say("hisMsg", e.message, "err"); }
+    }
+    function renderOrderList(list) {
+        if (!list.length) return `<div class="muted">Chưa có đơn</div>`;
+        return `<table class="table">
+      <thead><tr><th>ID</th><th>Ngày</th><th>Tổng</th><th>Trạng thái</th><th>Hàng</th></tr></thead>
+      <tbody>${list.map(o => `
+        <tr>
+          <td>${o.id}</td>
+          <td>${o.createdAt?.replace('T', ' ').slice(0, 19) ?? ""}</td>
+          <td>${o.totalAmount ?? 0}</td>
+          <td><span class="badge ${o.status}">${o.status}</span></td>
+          <td>${(o.items || []).map(i => `${i.productName} x${i.quantity}`).join(", ")}</td>
+        </tr>`).join("")}</tbody>
+    </table>`;
+    }
+
+    // ===== init =====
+    document.addEventListener("DOMContentLoaded", () => {
+        if (!guard()) return;
+        const hello = byId("hello"); if (hello) hello.textContent = `Xin chào, ${me.fullName || me.email}`;
+        const btnLogout = byId("btnLogout"); if (btnLogout) btnLogout.onclick = () => window.logout();
+        const btnReload = byId("btnReload"); if (btnReload) btnReload.onclick = loadProducts;
+        const btnCheckout = byId("btnCheckout"); if (btnCheckout) btnCheckout.onclick = checkout;
+
+        document.querySelectorAll(".tab").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                document.querySelectorAll(".tab").forEach((b) => b.classList.remove("active"));
+                btn.classList.add("active");
+                const tab = btn.dataset.tab;
+                byId("pane-pending").classList.toggle("hidden", tab !== "pending");
+                byId("pane-done").classList.toggle("hidden", tab !== "done");
+            });
+        });
+
+        loadProducts();
+        renderCart();
+        loadHistory();
+    });
+})();

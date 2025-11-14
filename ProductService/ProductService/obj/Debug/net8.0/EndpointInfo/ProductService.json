@@ -2,13 +2,14 @@
   "openapi": "3.0.1",
   "info": {
     "title": "ProductService",
-    "version": "1.0"
+    "description": "E-Commerce Product Service API",
+    "version": "v1"
   },
   "paths": {
     "/products": {
       "get": {
         "tags": [
-          "Products"
+          "Product"
         ],
         "responses": {
           "200": {
@@ -18,7 +19,7 @@
       },
       "post": {
         "tags": [
-          "Products"
+          "Product"
         ],
         "requestBody": {
           "content": {
@@ -49,7 +50,7 @@
     "/products/{id}": {
       "get": {
         "tags": [
-          "Products"
+          "Product"
         ],
         "parameters": [
           {
@@ -70,7 +71,7 @@
       },
       "put": {
         "tags": [
-          "Products"
+          "Product"
         ],
         "parameters": [
           {
@@ -110,7 +111,7 @@
       },
       "delete": {
         "tags": [
-          "Products"
+          "Product"
         ],
         "parameters": [
           {
@@ -123,6 +124,68 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/products/stock/decrease": {
+      "post": {
+        "tags": [
+          "ProductStock"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockAdjustRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockAdjustRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockAdjustRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/products/stock/increase": {
+      "post": {
+        "tags": [
+          "ProductStock"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockAdjustRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockAdjustRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockAdjustRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -174,7 +237,9 @@
     "schemas": {
       "Product": {
         "required": [
-          "name"
+          "name",
+          "price",
+          "quantity"
         ],
         "type": "object",
         "properties": {
@@ -184,10 +249,11 @@
           },
           "name": {
             "maxLength": 255,
-            "minLength": 0,
+            "minLength": 1,
             "type": "string"
           },
           "description": {
+            "maxLength": 1000,
             "type": "string",
             "nullable": true
           },
@@ -205,7 +271,35 @@
           },
           "updatedAt": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StockAdjustItemDto": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StockAdjustRequest": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StockAdjustItemDto"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -36,11 +36,17 @@ C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\EcommerceClientUI.runtimeconfig.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\EcommerceClientUI.dll
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\EcommerceClientUI.pdb
+C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.csproj.AssemblyReference.cache
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\rpswa.dswa.cache.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.AssemblyInfoInputs.cache
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.AssemblyInfo.cs
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.csproj.CoreCompileInputs.cache
+C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.sourcelink.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\rjimswa.dswa.cache.json
@@ -52,6 +58,7 @@ C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\Ecommerc.F4454D46.Up2Date
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.dll
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\refint\EcommerceClientUI.dll
 C:\Users\MSI\source\SOA\BaiTH3\EcommerceClientUI\EcommerceClientUI\obj\Debug\net8.0\EcommerceClientUI.pdb

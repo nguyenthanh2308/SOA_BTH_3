@@ -1,3 +1,9 @@
+wwwroot\admin.html
+wwwroot\css\style.css
 wwwroot\index.html
-wwwroot\script.js
-wwwroot\style.css
+wwwroot\js\admin.js
+wwwroot\js\app.js
+wwwroot\js\auth.js
+wwwroot\js\shop.js
+wwwroot\login.html
+wwwroot\shop.html
