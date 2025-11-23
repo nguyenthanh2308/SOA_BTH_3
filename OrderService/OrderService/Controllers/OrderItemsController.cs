@@ -166,4 +166,32 @@ public class OrderItemsController : ControllerBase
         await _db.SaveChangesAsync();
         return NoContent();
     }
+
+    // ---------------- GET BY DATE ----------------
+    // GET /order_items/by-date?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd
+    [HttpGet("by-date")]
+    public async Task<IActionResult> GetByDate([FromQuery] DateTime? startDate, [FromQuery] DateTime? endDate)
+    {
+        var query = _db.OrderItems.AsNoTracking()
+            .Include(i => i.Order)
+            .AsQueryable();
+
+        if (startDate.HasValue)
+        {
+            query = query.Where(i => i.Order.CreatedAt >= startDate.Value);
+        }
+
+        if (endDate.HasValue)
+        {
+            var endDateTime = endDate.Value.Date.AddDays(1).AddSeconds(-1); // End of day
+            query = query.Where(i => i.Order.CreatedAt <= endDateTime);
+        }
+
+        var list = await query
+            .OrderByDescending(x => x.Id)
+            .Select(x => Map(x))
+            .ToListAsync();
+
+        return Ok(list);
+    }
 }

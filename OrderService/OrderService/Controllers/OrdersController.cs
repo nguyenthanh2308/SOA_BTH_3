@@ -344,4 +344,39 @@ public class OrdersController : ControllerBase
         });
     }
 
+    // GET /orders/by-date?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd
+    [HttpGet("by-date")]
+    public async Task<ActionResult<List<OrderDto>>> GetByDate([FromQuery] DateTime? startDate, [FromQuery] DateTime? endDate)
+    {
+        var query = _db.Orders.AsNoTracking().Include(o => o.Items).AsQueryable();
+
+        if (startDate.HasValue)
+        {
+            query = query.Where(o => o.CreatedAt >= startDate.Value);
+        }
+
+        if (endDate.HasValue)
+        {
+            var endDateTime = endDate.Value.Date.AddDays(1).AddSeconds(-1); // End of day
+            query = query.Where(o => o.CreatedAt <= endDateTime);
+        }
+
+        var list = await query
+            .Select(o => new OrderDto(
+                o.Id,
+                o.CustomerName,
+                o.CustomerEmail,
+                o.Status,
+                o.TotalAmount,
+                o.CreatedAt,
+                o.UpdatedAt,
+                o.Items.Select(i => new OrderItemDto(
+                    i.Id, i.ProductId, i.ProductName, i.Quantity, i.UnitPrice, i.TotalPrice
+                )).ToList()
+            ))
+            .ToListAsync();
+
+        return Ok(list);
+    }
+
 }

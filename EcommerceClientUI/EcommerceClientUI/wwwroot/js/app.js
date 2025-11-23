@@ -9,6 +9,7 @@
         auth: () => get("authBase", "https://localhost:7268").replace(/\/$/, ""),
         prod: () => get("prodBase", "https://localhost:7181").replace(/\/$/, ""),
         order: () => get("orderBase", "https://localhost:7182").replace(/\/$/, ""),
+        report: () => get("reportBase", "https://localhost:5003").replace(/\/$/, "")
     };
 
     async function httpJson(url, opts = {}) {

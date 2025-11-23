@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CFEE0739-0859-443E-AB9C-018D73378FB5}|EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CFEE0739-0859-443E-AB9C-018D73378FB5}|EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|solutionrelative:ecommerceclientui\\ecommerceclientui\\wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96947E32-CA78-4E18-A5BA-6D69C56B3AE0}|ReportService\\ReportService.csproj|c:\\users\\msi\\source\\soa\\baith3\\reportservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96947E32-CA78-4E18-A5BA-6D69C56B3AE0}|ReportService\\ReportService.csproj|solutionrelative:reportservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "admin.html",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\admin.html",
+              "RelativeDocumentMoniker": "EcommerceClientUI\\EcommerceClientUI\\wwwroot\\admin.html",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\admin.html",
+              "RelativeToolTip": "EcommerceClientUI\\EcommerceClientUI\\wwwroot\\admin.html",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-23T15:45:46.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ReportService\\Program.cs",
+              "RelativeDocumentMoniker": "ReportService\\Program.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ReportService\\Program.cs",
+              "RelativeToolTip": "ReportService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T14:47:07.274Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

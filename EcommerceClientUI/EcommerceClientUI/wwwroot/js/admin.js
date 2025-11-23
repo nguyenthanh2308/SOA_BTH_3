@@ -2,7 +2,18 @@
     // ===== helpers (không dùng $ toàn cục) =====
     const byId = (id) => document.getElementById(id);
     const LS = { urls: "CFG_URLS", token: "TOKEN" };
-    const cfg = (() => { try { return JSON.parse(localStorage.getItem(LS.urls) || "{}"); } catch { return {}; } })();
+    const defaults = {
+        auth: "https://localhost:7268",
+        product: "https://localhost:7181",
+        order: "https://localhost:7182",
+        report: "https://localhost:5003"
+    };
+    const cfg = (() => {
+        try {
+            const fromLs = JSON.parse(localStorage.getItem(LS.urls) || "{}");
+            return { ...defaults, ...fromLs };
+        } catch { return defaults; }
+    })();
     const TOKEN = localStorage.getItem(LS.token) || "";
 
     function say(id, text, type = "info") {
@@ -175,9 +186,143 @@
         }
     }
 
+    // ===== Reports =====
+    async function getReportStats(type) {
+        console.log("getReportStats called with", type);
+        say("reportMsg", "Đang tải thống kê...");
+        const start = byId("reportStart").value;
+        const end = byId("reportEnd").value;
+        const q = `?startDate=${start}&endDate=${end}`;
+
+        try {
+            let url = "";
+            if (type === "product") url = `${cfg.report}/api/reports/products/stats${q}`;
+            else url = `${cfg.report}/api/reports/orders/summary${q}`;
+
+            console.log("Fetching URL:", url);
+            const data = await httpJson(url, { headers: authHeaders() });
+            renderStats(type, data);
+            say("reportMsg", "Đã tải xong!", "ok");
+        } catch (e) {
+            console.error(e);
+            say("reportMsg", e.message, "err");
+        }
+    }
+
+    function renderStats(type, data) {
+        const box = byId("statsResult");
+        box.innerHTML = "";
+
+        if (type === "product") {
+            // data = [ { productId, productName, currentStock, totalSold, totalRevenue, totalProfit } ]
+            let html = `<table class="table"><thead><tr>
+                <th>ID</th><th>Tên</th><th>Tồn</th><th>Đã bán</th><th>Doanh thu</th><th>Lợi nhuận</th>
+            </tr></thead><tbody>`;
+            data.forEach(p => {
+                html += `<tr>
+                    <td>${p.productId}</td>
+                    <td>${p.productName}</td>
+                    <td>${p.currentStock}</td>
+                    <td>${p.totalSold}</td>
+                    <td>${formatMoney(p.totalRevenue)}</td>
+                    <td>${formatMoney(p.totalProfit)}</td>
+                </tr>`;
+            });
+            html += "</tbody></table>";
+            box.innerHTML = html;
+        } else {
+            // data = { totalOrders, totalRevenue, totalProfit, averageOrderValue, ordersByDate: [] }
+            let html = `<div class="grid2">
+                <div class="card"><h3>Tổng đơn: ${data.totalOrders}</h3></div>
+                <div class="card"><h3>Doanh thu: ${formatMoney(data.totalRevenue)}</h3></div>
+                <div class="card"><h3>Lợi nhuận: ${formatMoney(data.totalProfit)}</h3></div>
+                <div class="card"><h3>TB đơn: ${formatMoney(data.averageOrderValue)}</h3></div>
+            </div>`;
+
+            html += `<h3 style="margin-top:10px">Chi tiết theo ngày</h3>
+            <table class="table"><thead><tr><th>Ngày</th><th>Số đơn</th><th>Doanh thu</th></tr></thead><tbody>`;
+            (data.ordersByDate || []).forEach(d => {
+                html += `<tr>
+                    <td>${new Date(d.date).toLocaleDateString()}</td>
+                    <td>${d.count}</td>
+                    <td>${formatMoney(d.revenue)}</td>
+                </tr>`;
+            });
+            html += "</tbody></table>";
+            box.innerHTML = html;
+        }
+    }
+
+    async function generateReport(type) {
+        console.log("generateReport called with", type);
+        say("reportMsg", `Đang tạo báo cáo ${type}...`);
+        const start = byId("reportStart").value;
+        const end = byId("reportEnd").value;
+        if (!start || !end) {
+            say("reportMsg", "Vui lòng chọn ngày bắt đầu và kết thúc", "err");
+            return;
+        }
+
+        try {
+            const res = await httpJson(`${cfg.report}/api/reports/generate`, {
+                method: "POST",
+                headers: authHeaders({ "Content-Type": "application/json" }),
+                body: JSON.stringify({
+                    reportType: type, // "Product" or "Order"
+                    startDate: start,
+                    endDate: end
+                })
+            });
+            say("reportMsg", `Tạo thành công! ID: ${res.reportId}`, "ok");
+            // Auto view the report
+            await getReportDetail(res.reportId);
+        } catch (e) {
+            say("reportMsg", e.message, "err");
+        }
+    }
+
+    async function getReportDetail(id) {
+        say("reportMsg", `Đang tải báo cáo #${id}...`);
+        try {
+            const data = await httpJson(`${cfg.report}/api/reports/${id}`, { headers: authHeaders() });
+            renderReportDetail(data);
+            say("reportMsg", `Đang xem báo cáo #${id}`, "ok");
+        } catch (e) {
+            say("reportMsg", e.message, "err");
+        }
+    }
+
+    function renderReportDetail(report) {
+        const box = byId("statsResult");
+        box.innerHTML = "";
+
+        let html = `<h3>Báo cáo #${report.id} (${report.reportType})</h3>
+        <p>Kỳ: ${new Date(report.period).toLocaleDateString()}</p>
+        <p>Ngày tạo: ${new Date(report.generatedAt).toLocaleString()}</p>
+        <table class="table">
+            <thead><tr><th>Key</th><th>Tên</th><th>Số lượng</th><th>Giá trị (Lợi nhuận)</th></tr></thead>
+            <tbody>`;
+
+        (report.details || []).forEach(d => {
+            html += `<tr>
+                <td>${d.key}</td>
+                <td>${d.name}</td>
+                <td>${d.quantity}</td>
+                <td>${formatMoney(d.value)}</td>
+            </tr>`;
+        });
+        html += "</tbody></table>";
+        box.innerHTML = html;
+    }
+
+    function formatMoney(n) {
+        return (n || 0).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+    }
+
     // ===== init =====
     document.addEventListener("DOMContentLoaded", () => {
         if (!guard()) return;
+
         const logoutBtn = byId("btnLogout");
         if (logoutBtn) logoutBtn.onclick = () => window.logout();
 
@@ -189,6 +334,18 @@
 
         const btnOrdersReload = byId("btnOrdersReload");
         if (btnOrdersReload) btnOrdersReload.onclick = loadOrders;
+
+        // Report buttons
+        if (byId("btnStatProduct")) byId("btnStatProduct").onclick = () => getReportStats("product");
+        if (byId("btnStatOrder")) byId("btnStatOrder").onclick = () => getReportStats("order");
+        if (byId("btnGenProductReport")) byId("btnGenProductReport").onclick = () => generateReport("Product");
+        if (byId("btnGenOrderReport")) byId("btnGenOrderReport").onclick = () => generateReport("Order");
+
+        // Set default dates (this month)
+        const now = new Date();
+        const firstDay = new Date(now.getFullYear(), now.getMonth(), 1);
+        if (byId("reportStart")) byId("reportStart").valueAsDate = firstDay;
+        if (byId("reportEnd")) byId("reportEnd").valueAsDate = now;
 
         loadProducts();
         loadOrders();

@@ -1,11 +1,13 @@
 ﻿<!doctype html>
 <html lang="vi">
+
 <head>
     <meta charset="utf-8" />
     <title>Admin · E-Commerce</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
     <header class="topbar">
         <h1>Quản trị</h1>
@@ -28,7 +30,13 @@
             <div id="prodMsg" class="msg"></div>
             <table class="table">
                 <thead>
-                    <tr><th>ID</th><th>Tên</th><th>Giá</th><th>Tồn</th><th>Hành động</th></tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Giá</th>
+                        <th>Tồn</th>
+                        <th>Hành động</th>
+                    </tr>
                 </thead>
                 <tbody id="tbody"></tbody>
             </table>
@@ -42,14 +50,46 @@
             <div id="orderMsg" class="msg"></div>
             <table class="table">
                 <thead>
-                    <tr><th>ID</th><th>Khách</th><th>Email</th><th>Trạng thái</th><th>Tổng</th><th>Hàng</th><th>Hành động</th></tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Khách</th>
+                        <th>Email</th>
+                        <th>Trạng thái</th>
+                        <th>Tổng</th>
+                        <th>Hàng</th>
+                        <th>Hành động</th>
+                    </tr>
                 </thead>
                 <tbody id="ordersBody"></tbody>
             </table>
         </section>
+
+        <section class="card">
+            <h2>Báo cáo & Thống kê</h2>
+            <div class="row gap" style="align-items: flex-end;">
+                <div>
+                    <label>Từ ngày</label>
+                    <input type="date" id="reportStart" />
+                </div>
+                <div>
+                    <label>Đến ngày</label>
+                    <input type="date" id="reportEnd" />
+                </div>
+                <button id="btnStatProduct" class="btn">Thống kê SP</button>
+                <button id="btnStatOrder" class="btn">Thống kê Đơn</button>
+            </div>
+            <div class="row gap" style="margin-top: 10px;">
+                <button id="btnGenProductReport" class="btn primary">Tạo Báo cáo SP</button>
+                <button id="btnGenOrderReport" class="btn primary">Tạo Báo cáo Đơn</button>
+            </div>
+            <div id="reportMsg" class="msg"></div>
+
+            <div id="statsResult" style="margin-top:16px; overflow-x:auto;"></div>
+        </section>
     </main>
 
-    <script src="js/auth.js" defer></script>
-    <script src="js/admin.js" defer></script>
+    <script src="js/auth.js?v=6" defer></script>
+    <script src="js/admin.js?v=6" defer></script>
 </body>
+
 </html>

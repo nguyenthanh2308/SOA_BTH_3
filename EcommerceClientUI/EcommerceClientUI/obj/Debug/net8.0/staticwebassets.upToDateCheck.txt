@@ -1,4 +1,3 @@
-wwwroot\admin.html
 wwwroot\css\style.css
 wwwroot\index.html
 wwwroot\js\admin.js
@@ -7,3 +6,4 @@ wwwroot\js\auth.js
 wwwroot\js\shop.js
 wwwroot\login.html
 wwwroot\shop.html
+wwwroot\admin.html

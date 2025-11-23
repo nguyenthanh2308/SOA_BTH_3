@@ -1,5 +1,5 @@
 ﻿// ===== helpers =====
-const $ = (id) => document.getElementById(id);
+const el = (id) => document.getElementById(id);
 const LS = {
     urls: "CFG_URLS",
     token: "TOKEN",           // JWT admin
@@ -12,15 +12,16 @@ function getCfg() {
 }
 function saveCfg() {
     const cfg = {
-        auth: $("authBase")?.value || "https://localhost:7268",
-        product: $("prodBase")?.value || "https://localhost:7181",
-        order: $("orderBase")?.value || "https://localhost:7182",
+        auth: el("authBase")?.value || "https://localhost:7268",
+        product: el("prodBase")?.value || "https://localhost:7181",
+        order: el("orderBase")?.value || "https://localhost:7182",
+        report: el("reportBase")?.value || "https://localhost:5003",
     };
     localStorage.setItem(LS.urls, JSON.stringify(cfg));
     return cfg;
 }
 function say(id, text, type = "info") {
-    const box = $(id); if (!box) return;
+    const box = el(id); if (!box) return;
     box.className = "msg " + type;
     box.textContent = text || "";
 }
@@ -56,15 +57,16 @@ window.logout = function () {
 // ===== wire index.html =====
 document.addEventListener("DOMContentLoaded", () => {
     // Chỉ chạy nếu đang ở index.html (có các phần tử này)
-    if (!$("btnLoginAdmin") && !$("btnCusLogin") && !$("btnCusRegister")) return;
+    if (!el("btnLoginAdmin") && !el("btnCusLogin") && !el("btnCusRegister")) return;
 
     // nạp cấu hình cũ nếu có
     const cfg = getCfg();
-    if (cfg.auth && $("authBase")) $("authBase").value = cfg.auth;
-    if (cfg.product && $("prodBase")) $("prodBase").value = cfg.product;
-    if (cfg.order && $("orderBase")) $("orderBase").value = cfg.order;
+    if (cfg.auth && el("authBase")) el("authBase").value = cfg.auth;
+    if (cfg.product && el("prodBase")) el("prodBase").value = cfg.product;
+    if (cfg.order && el("orderBase")) el("orderBase").value = cfg.order;
+    if (cfg.report && el("reportBase")) el("reportBase").value = cfg.report;
 
-    $("btnSaveCfg")?.addEventListener("click", () => {
+    el("btnSaveCfg")?.addEventListener("click", () => {
         saveCfg(); say("cfgMsg", "Đã lưu!", "ok");
     });
 
@@ -74,13 +76,13 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             const tab = btn.dataset.tab;
-            $("pane-login")?.classList.toggle("hidden", tab !== "login");
-            $("pane-register")?.classList.toggle("hidden", tab !== "register");
+            el("pane-login")?.classList.toggle("hidden", tab !== "login");
+            el("pane-register")?.classList.toggle("hidden", tab !== "register");
         });
     });
 
     // ==== ADMIN LOGIN ====
-    $("btnLoginAdmin")?.addEventListener("click", async () => {
+    el("btnLoginAdmin")?.addEventListener("click", async () => {
         const c = saveCfg();
         say("adminMsg", "Đang đăng nhập...");
         try {
@@ -88,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    userName: $("adminUser").value.trim(),
-                    password: $("adminPass").value.trim() // MD5
+                    userName: el("adminUser").value.trim(),
+                    password: el("adminPass").value.trim() // MD5
                 })
             });
             const token = res.token || "";
@@ -101,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==== CUSTOMER LOGIN ====
-    $("btnCusLogin")?.addEventListener("click", async () => {
+    el("btnCusLogin")?.addEventListener("click", async () => {
         const c = saveCfg();
         say("cusLoginMsg", "Đang đăng nhập...");
         try {
@@ -109,8 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    email: $("cusEmailLogin").value.trim(),
-                    password: $("cusPassLogin").value
+                    email: el("cusEmailLogin").value.trim(),
+                    password: el("cusPassLogin").value
                 })
             });
             localStorage.setItem(LS.customer, JSON.stringify(res));
@@ -120,14 +122,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==== CUSTOMER REGISTER ====
-    $("btnCusRegister")?.addEventListener("click", async () => {
+    el("btnCusRegister")?.addEventListener("click", async () => {
         const c = saveCfg();
         say("cusRegMsg", "Đang đăng ký...");
         try {
             const body = {
-                fullName: $("cusFullNameReg").value.trim(),
-                email: $("cusEmailReg").value.trim(),
-                password: $("cusPassReg").value
+                fullName: el("cusFullNameReg").value.trim(),
+                email: el("cusEmailReg").value.trim(),
+                password: el("cusPassReg").value
             };
             const res = await httpJson(`${c.order}/customers/register`, {
                 method: "POST",

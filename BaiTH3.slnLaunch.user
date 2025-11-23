@@ -1,0 +1,27 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "AuthService\\AuthService\\AuthService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ProductService\\ProductService\\ProductService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "OrderService\\OrderService\\OrderService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ReportService\\ReportService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

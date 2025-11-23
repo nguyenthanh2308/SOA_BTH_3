@@ -3,6 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FF0BFECA-88D9-1B2F-4BF7-CBAF3B2ED0AF}|..\\ReportService\\ReportService.csproj|c:\\users\\msi\\source\\soa\\baith3\\reportservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\shop.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\js\\shop.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -12,13 +21,7 @@
       "AbsoluteMoniker": "D:0:0:{CE3E96D8-6434-51DB-54F9-C2B377FA6C2F}|..\\OrderService\\OrderService\\OrderService.csproj|c:\\users\\msi\\source\\soa\\baith3\\orderservice\\orderservice\\data\\orderdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\js\\shop.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\js\\admin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\shop.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4ACB90B0-DD4D-30EF-2C6F-4CABA6697500}|..\\EcommerceClientUI\\EcommerceClientUI\\EcommerceClientUI.csproj|c:\\users\\msi\\source\\soa\\baith3\\ecommerceclientui\\ecommerceclientui\\wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
@@ -138,11 +141,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ReportService\\Program.cs",
+              "RelativeDocumentMoniker": "..\\ReportService\\Program.cs",
+              "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ReportService\\Program.cs",
+              "RelativeToolTip": "..\\ReportService\\Program.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T14:15:18.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Models\\OrderItem.cs",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Models\\OrderItem.cs",
@@ -150,12 +166,11 @@
               "RelativeToolTip": "..\\OrderService\\OrderService\\Models\\OrderItem.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAIAzwBMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T00:46:21.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T00:46:21.08Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\index.html",
@@ -163,12 +178,11 @@
               "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\index.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-24T00:38:48.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T00:38:48.149Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "auth.js",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\auth.js",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\auth.js",
@@ -176,12 +190,11 @@
               "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\auth.js",
               "ViewState": "AgIAAFIAAAAAAAAAAAAAAIIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-14T05:59:40.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T05:59:40.342Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "admin.html",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\admin.html",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\admin.html",
@@ -189,25 +202,24 @@
               "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\admin.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-14T05:04:34.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T05:04:34.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "shop.html",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\shop.html",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\shop.html",
               "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\shop.html",
               "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\shop.html",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAgwEMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-11-14T05:04:49.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "admin.js",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\admin.js",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\admin.js",
@@ -215,25 +227,23 @@
               "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\admin.js",
               "ViewState": "AgIAAK8AAAAAAAAAAAAtwMQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-14T05:04:11.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T05:04:11.077Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "shop.js",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\shop.js",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\shop.js",
               "ToolTip": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\shop.js",
               "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\shop.js",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAowKcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKAAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-14T05:04:20.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T05:04:20.472Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Controllers\\OrdersController.cs",
@@ -241,12 +251,11 @@
               "RelativeToolTip": "..\\OrderService\\OrderService\\Controllers\\OrdersController.cs",
               "ViewState": "AgIAAEkBAAAAAAAAAAAtwFEBAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T00:51:54.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T00:51:54.529Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Models\\Order.cs",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Models\\Order.cs",
@@ -254,12 +263,11 @@
               "RelativeToolTip": "..\\OrderService\\OrderService\\Models\\Order.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T08:34:57.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T08:34:57.548Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "OrderDbContext.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Data\\OrderDbContext.cs",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Data\\OrderDbContext.cs",
@@ -267,12 +275,11 @@
               "RelativeToolTip": "..\\OrderService\\OrderService\\Data\\OrderDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T08:55:51.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T08:55:51.881Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CustomersController.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Controllers\\CustomersController.cs",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Controllers\\CustomersController.cs",
@@ -280,12 +287,11 @@
               "RelativeToolTip": "..\\OrderService\\OrderService\\Controllers\\CustomersController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T04:58:36.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T04:58:36.416Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "OrderItemsController.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Controllers\\OrderItemsController.cs",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Controllers\\OrderItemsController.cs",
@@ -293,12 +299,11 @@
               "RelativeToolTip": "..\\OrderService\\OrderService\\Controllers\\OrderItemsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:27:28.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T09:27:28.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Models\\Customer.cs",
@@ -306,12 +311,11 @@
               "RelativeToolTip": "..\\OrderService\\OrderService\\Models\\Customer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T04:21:26.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T04:21:26.755Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "app.js",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\app.js",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\app.js",
@@ -319,12 +323,11 @@
               "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\js\\app.js",
               "ViewState": "AgIAAAkAAAAAAAAAAAAqwCEAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-14T05:04:00.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T05:04:00.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "login.html",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\login.html",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\login.html",
@@ -332,12 +335,11 @@
               "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\login.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-14T05:59:19.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T05:59:19.126Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "OrderDtos.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\DTOs\\OrderDtos.cs",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\DTOs\\OrderDtos.cs",
@@ -345,12 +347,11 @@
               "RelativeToolTip": "..\\OrderService\\OrderService\\DTOs\\OrderDtos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T04:55:12.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T04:55:12.982Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\css\\style.css",
@@ -358,12 +359,11 @@
               "RelativeToolTip": "..\\EcommerceClientUI\\EcommerceClientUI\\wwwroot\\css\\style.css",
               "ViewState": "AgIAACQAAAAAAAAAAAAgwIIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-24T00:58:49.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T00:58:49.721Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\Controllers\\ProductsController.cs",
@@ -371,12 +371,11 @@
               "RelativeToolTip": "..\\ProductService\\ProductService\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:07:43.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T01:07:43.015Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ProductDbContext.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Data\\ProductDbContext.cs",
               "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\Data\\ProductDbContext.cs",
@@ -384,12 +383,11 @@
               "RelativeToolTip": "..\\ProductService\\ProductService\\Data\\ProductDbContext.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAzwDAAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:45:46.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:45:46.594Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\appsettings.json",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\appsettings.json",
@@ -401,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Program.cs",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Program.cs",
@@ -413,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "StockAdjustDtos.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\DTOs\\StockAdjustDtos.cs",
               "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\DTOs\\StockAdjustDtos.cs",
@@ -421,12 +419,11 @@
               "RelativeToolTip": "..\\ProductService\\ProductService\\DTOs\\StockAdjustDtos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:44:52.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:44:52.331Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ProductStockController.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Controllers\\ProductStockController.cs",
               "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\Controllers\\ProductStockController.cs",
@@ -434,12 +431,11 @@
               "RelativeToolTip": "..\\ProductService\\ProductService\\Controllers\\ProductStockController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:45:29.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:45:29.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Models\\Product.cs",
               "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\Models\\Product.cs",
@@ -447,12 +443,11 @@
               "RelativeToolTip": "..\\ProductService\\ProductService\\Models\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:06:19.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T01:06:19.323Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Program.cs",
               "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\Program.cs",
@@ -464,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "ProductService.csproj",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\ProductService.csproj",
               "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\ProductService.csproj",
@@ -476,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\OrderService\\OrderService\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "..\\OrderService\\OrderService\\Properties\\launchSettings.json",
@@ -488,7 +483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\Properties\\launchSettings.json",
@@ -500,7 +495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\Properties\\launchSettings.json",
@@ -512,7 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\appsettings.json",
               "RelativeDocumentMoniker": "AuthService\\appsettings.json",
@@ -524,7 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Program.cs",
               "RelativeDocumentMoniker": "AuthService\\Program.cs",
@@ -536,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "AuthService\\Controllers\\AuthController.cs",
@@ -548,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\ProductService\\ProductService\\appsettings.json",
               "RelativeDocumentMoniker": "..\\ProductService\\ProductService\\appsettings.json",
@@ -560,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "AuthService.http",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\AuthService.http",
               "RelativeDocumentMoniker": "AuthService\\AuthService.http",
@@ -572,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "HashUtil.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Utils\\HashUtil.cs",
               "RelativeDocumentMoniker": "AuthService\\Utils\\HashUtil.cs",
@@ -584,7 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "UserRecord.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Models\\UserRecord.cs",
               "RelativeDocumentMoniker": "AuthService\\Models\\UserRecord.cs",
@@ -596,7 +591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Models\\LoginRequest.cs",
               "RelativeDocumentMoniker": "AuthService\\Models\\LoginRequest.cs",
@@ -608,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\AuthService\\AuthService\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "AuthService\\Properties\\launchSettings.json",
@@ -620,7 +615,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\Program.cs",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\Program.cs",
@@ -632,7 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\MSI\\source\\SOA\\BaiTH3\\EcommerceClientUI\\EcommerceClientUI\\appsettings.json",
               "RelativeDocumentMoniker": "..\\EcommerceClientUI\\EcommerceClientUI\\appsettings.json",
